@@ -1,0 +1,95 @@
+@charset "UTF-8";
+
+:root{
+  --Main-color:#2b73b6;
+  --sub-color:#dbe8f0;
+  --background-color:#ffffff;
+  --text-color:#333333;
+}
+*{margin: 0;padding: 0;box-sizing: border-box;}
+a{display: block; text-decoration: none; color: inherit;}
+li{list-style: none;}
+img{vertical-align: top;}
+.flex{display: flex; align-items: center;}
+body{background: var(--background-color);color: var(--text-color); 
+width: 100%;}
+
+.wrap{width: 100%;  height: calc(400px + 250px);}
+
+/* header */
+header{ width: 200px;height: 100%; border-right: 1px solid var(--Main-color);}
+h1{width: 200px; height: 40px;}
+nav{width: 80%; margin: auto; margin-top: 50px;}
+
+.main-menu a {padding: 5px 20px;}
+.main-menu:hover>a {background: var(--Main-color); color: #fff; font-weight: 600;}
+.sub-menu{display: none; border: 1px solid var(--Main-color);}
+.sub-menu a:hover {background: var(--sub-color); color: var(--Main-color); font-weight: 600;}
+
+main{flex: 1;}
+
+/* upper */
+.upper{width: 100%; height: 400px;}
+
+.slide-container{width: calc(100% - 230px); height: 100%; overflow: hidden;}
+.slide-wrap{width: 300%; height: 100%; position: relative;}
+.slide{width: 100%; height: 100%; position: relative; background-size: cover; background-repeat: no-repeat; background-position: center;}
+.slide1{background-image: url(../image/slide1.png);}
+.slide2{background-image: url(../image/slide2.png);}
+.slide3{background-image: url(../image/slide3.png);}
+.summary{position: absolute;}
+.slide .summary{text-align: center;
+  text-transform: capitalize; top: 20%;left: 50%; transform: translateX(-50%);} 
+.slide .summary h2{font-size: 28px;} 
+.slide .summary p{font-size: 22px;} 
+
+.slide2 .summary{color: #fff;}
+
+.banner{width: 230px; height: 100%; position: relative; background-image: url(../image/banner.png);}
+.banner .summary{top: 10%; left: 10%;}
+
+/* lower */
+.lower{height: 250px;}
+.content {width: 50%; height: 100%; padding:10px 20px; }
+.content h3 {padding: 5px 15px 2px 15px; border: 1px solid var(--Main-color); font-size: 18px;
+  border-bottom: none; background: var(--background-color); display: inline-block; margin-left: 20px; position: relative;z-index: 1;}
+.content ul {width: 100%; height: 80%; padding: 10px; border-top: 1px solid var(--Main-color); transform: translateY(-1px);}
+.notice{border-right: 1px solid var(--Main-color)}
+.notice ul li{display: flex; justify-content: space-between; font-size: 15px;  cursor: pointer;
+  padding: 5px 10px; border-bottom: 1px solid var(--sub-color);}
+.notice ul li:hover { font-weight: 600; background: var(--sub-color);}
+.notice ul li:nth-last-child(1){border: none;}
+
+.notice ul li a{width: 70%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+
+.gallery ul {gap: 10px; padding: 20px;}
+.gallery ul li {width: 33%; height: 100%; display: flex; flex-direction: column;}
+.gallery ul li a {width: 100%; height: 90%;overflow: hidden;}
+.gallery ul li .gallery-bg { transition: .4s; width: 100%; height: 100%; background-position: center; background-size: cover; background-repeat: no-repeat;}
+
+.gallery ul li:nth-child(1) .gallery-bg {background-image: url(../image/gallery1.png);}
+.gallery ul li:nth-child(2) .gallery-bg {background-image: url(../image/gallery2.png);}
+.gallery ul li:nth-child(3) .gallery-bg {background-image: url(../image/gallery3.png);}
+
+.gallery ul li .bg-coption {width: 100%; height: 10%; padding: 5px; transition: .4s;}
+.gallery ul li:hover .gallery-bg {transform: scale(110%);}
+.gallery ul li:hover .bg-coption {font-weight: 600; color: var(--Main-color);}
+
+
+/* footer */
+footer{width: 100%; height: 100px; background: #333; color: #fff; }
+.copyright{flex: 1; color: #eee; text-align: center;}
+.copyright p {padding: 5px; font-size: 15px;}
+
+select{width: 120px; margin: 30px; cursor: pointer;}
+
+/* popup */
+.popup-box{width: 100%; height: 100%; border: 1px solid #000; background: rgba(0, 0, 0, .6); z-index: 9;
+  position: absolute; top: 50%;left: 50%;transform: translate(-50%,-50%); display: none;}
+.popup{width: 500px; position: absolute; top: 50%;left: 50%;transform: translate(-50%,-50%);
+  background: var(--background-color); padding: 50px;}
+.popup h4 {padding-bottom: 20px; margin: 24px 0; text-align: center; border-bottom: 1px solid var(--Main-color);}
+.popup p {padding-bottom: 24px; line-height: 1.5;}
+
+a.close {display: block; position: absolute; top: 0;right: 0; color: #fff;
+  background: var(--Main-color); padding: 10px 20px;}
