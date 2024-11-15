@@ -1,0 +1,107 @@
+@charset "UTF-8";
+
+
+:root {
+    --background-color:#fff;
+    --text-color:#666;
+    --main-color:#ffda2b;
+    --sub-color1:#fff8cb;
+    --sub-color2:#21242b;
+}
+
+*{margin: 0;padding: 0;box-sizing: border-box;}
+li{list-style: none;}
+a{text-decoration: none; color: inherit; display: block;}
+img {vertical-align: top;}
+body{background: var(--background-color); color: var(--text-color);}
+
+.flex {display: flex; align-items: center; }
+.inner {width: 1340px; margin-left: auto; margin-right: auto;}
+
+/* header */
+header{height: 80px; text-align: center; justify-content: space-between;} 
+header::before {content: ''; width: 100%; height: 0; background: var(--background-color);
+    position: absolute; top: 80px; left: 0; z-index: 2; transition: .6s;}
+header.on::before  {height: 190px; }  
+nav {align-self: flex-end; width: 60%;}
+
+.main-menu {flex: 1; position: relative;}
+.main-menu a {padding: 10px; text-align: center;}
+.main-menu:hover> a {background: var(--sub-color2); color: var(--main-color); font-weight: 600;}
+.sub-menu {position: absolute; z-index: 8; width: 100%; display: none;}
+.sub-menu a:hover {background: var(--main-color);}
+
+
+/* slide  */
+.slide-container{height: 350px; width: 100%; overflow: hidden;}
+.slide-wrap{height: 100%; width: 300%; position: relative;}
+.slide {height: 100%; width: 100%; position: relative; 
+    background-position: center; background-repeat: no-repeat; background-size: cover;}
+.slide1{background-image: url(../image/slide1.png);}
+.slide2{background-image: url(../image/slide2.png);}
+.slide3{background-image: url(../image/slide3.png);}
+.slide .summary {position: absolute; top: 20%; left: 50%;}
+.slide span {width: 100%; display: block; text-indent: -99px; overflow: hidden;}
+
+main {margin-top: -80px; position: relative; z-index: 2;}
+/* shortcut */
+.shortcut {width: 100%; height: 80px; gap: 20px;padding: 10px;
+    background: var(--sub-color2); justify-content: space-evenly;}
+.shortcut li {text-align: center;}
+.shortcut li a {display: flex; align-items: center; gap: 5px; color: #8b8b8b;}
+.shortcut li a img {transition: .4s; margin-right: 10px;}
+.shortcut li a:hover img {transform: scale(110%);}
+
+
+/* banner */
+.banner-wrap{height: 150px; width: 100%; position: relative;
+    }
+.banner{position: absolute;width: 100%; height: 100%; 
+    background: left no-repeat ; background-size: cover;}
+
+.banner1{background-image: url(../image/banner.png);}
+.banner2{background-color: #8b8b8b;}
+.banner3{background-color: var(--sub-color2);}
+.banner .summary {position: absolute; top: 30%; left: 20%;}
+.banner span {width: 100%; display: block; text-indent: -99px; overflow: hidden;}
+
+/* tabs */
+.tabs {height: 300px; width: 100%; background: #eee; padding: 20px 50px; position: relative;}
+.tab-menu a {padding: 8px 30px;background: #fff;}
+.tab-menu li.on a {background: var(--sub-color2); color: var(--main-color);}
+
+.tab {position: absolute; width: 80%; height: 76%; border-top: 1px solid var(--sub-color2);}
+
+.notice li {display: flex; justify-content: space-between; padding: 6px 30px; cursor: pointer;}
+.notice li:hover {background: var(--background-color); font-weight: 600;}
+.notice li a {width: 70%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+
+
+#gallery{display: none;}
+.gallery{justify-content: space-between; height: 100%; width: 100%;}
+.gallery li {text-align: center; }
+.gallery li:hover figure img {transform: scale(110%); opacity: .8;}
+.gallery li figure {width: 80%; margin: auto; margin-bottom: 10px; overflow: hidden;}
+.gallery li figure img {width: 100%; transition: .4s;}
+
+
+
+/* footer */
+footer {height: 120px; background: #8b8b8b;}
+footer .right {width: 80%; flex:1; padding: 20px; height: 100%; color: var(--sub-color2);}
+.toe {height: 50%; top: 10px; text-align: center;}
+
+.footer-menu li {flex: 1; text-align: center;}
+.footer-menu li a {height: 100%;}
+.footer-menu li a:hover {font-weight: 600;}
+
+
+/* popup */
+.popup {width: 500px; padding: 50px; background: var(--background-color); z-index: 9; display: none;
+    border: 1px solid #000; position: fixed; top: 50%; left: 50%; transform: translate(-50%,-50%);}
+.popup h4 {padding-bottom: 20px; margin-bottom: 20px; border-bottom: 1px solid #000; text-align: center;}
+.popup p {padding: 20px 0;}
+
+
+a.close{position: absolute; top: 0; right: 0; padding: 10px 20px;
+    background: var(--sub-color2); color: var(--background-color);}
